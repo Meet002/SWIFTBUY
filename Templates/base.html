@@ -68,6 +68,29 @@
         margin-right: -30px;
         cursor: pointer;
       }
+
+      .menu-link {
+        font-size: 18px;
+        text-decoration: none;
+        color: gray;
+        font-weight: 300;
+        transition: 0.3s;
+      }
+
+      .menu-link:hover {
+        color: #6c757d;
+        padding-left: 8px;
+      }
+
+      .menu-icon {
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      .offcanvas-body {
+        padding-left: 35px;
+        padding-right: 35px;
+      }
     </style>
   </head>
 
@@ -93,13 +116,224 @@
         <div class="right-side">
           <i class="bi bi-telephone"></i> +91 9876543210
         </div>
-        <div class="menu-icon">
+        <div
+          class="menu-icon"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#sideMenu"
+        >
           <i class="bi bi-list"></i>
         </div>
       </div>
     </nav>
+
+    <!-- Side Menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="sideMenu">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title fw-bold ">
+          SWIFT <br />
+          BUY
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+        ></button>
+      </div>
+
+      <div class="offcanvas-body">
+        <ul class="list-unstyled fs-5">
+          <li class="mb-3"><a href="#" class="menu-link">Home</a></li>
+          <li class="mb-3"><a href="#" class="menu-link">About Us</a></li>
+          <li class="mb-3"><a href="#" class="menu-link">Products</a></li>
+          <li class="mb-3"><a href="#" class="menu-link">Testimonials</a></li>
+          <li class="mb-3"><a href="#" class="menu-link">Contact</a></li>
+          <li class="mb-3"><a href="#" class="menu-link">Login</a></li>
+        </ul>
+      </div>
+    </div>
+
     {% block body %} {% endblock body %}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
+    <!-- modern dark footer  -->
+    <footer class="dark-contact-section">
+      <div class="container py-5">
+        <div class="row align-items-start gy-5">
+          <div class="col-lg-7">
+            <div class="brand-block mb-5">
+              <h6 class="small-logo">
+                SWIFT <br />
+                BUY
+              </h6>
+            </div>
+
+            <h1 class="main-heading">
+              We Design all over <br class="d-none d-md-block" />
+              the world
+            </h1>
+
+            <div class="email-box mt-5">
+              <p class="mb-1 small-text">Email Id</p>
+              <h3 class="email-display">Info@example.com</h3>
+            </div>
+          </div>
+
+          <div class="col-lg-5 text-lg-end">
+            <nav class="footer-menu mb-5">
+              <a href="#">Home</a>
+              <a href="#">Services</a>
+              <a href="#">Products</a>
+              <a href="#">About Us</a>
+              <a href="#">Contact</a>
+            </nav>
+
+            <div class="footer-actions d-flex flex-column align-items-lg-end">
+              <div class="social-icons mb-4">
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+
+              <button class="btn contact-btn">Contact us</button>
+            </div>
+          </div>
+        </div>
+
+        <hr class="footer-line mt-5 mb-4" />
+
+        <div class="row pb-3">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <p class="footer-text mb-0">
+              © 2026 SwiftBuy. Developed by Meet Vadoliya
+            </p>
+          </div>
+
+          <div class="col-md-6 text-md-end">
+            <a href="#" class="footer-link">Privacy Policy</a>
+            <a href="#" class="footer-link ms-4">Terms & Conditions</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <style>
+      .dark-contact-section {
+        background: #211f1c;
+        color: #d1c5b5;
+        /* Removed min-height: 100vh to let padding work naturally */
+        padding: 80px 0 40px 0; /* Clear top/bottom padding */
+      }
+
+      .small-logo {
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: #8f8273;
+        line-height: 1.2;
+      }
+
+      .main-heading {
+        font-size: clamp(32px, 5vw, 60px); /* Responsive font size */
+        font-weight: 300;
+        color: white;
+        line-height: 1.1;
+      }
+
+      .small-text {
+        color: #8f8273;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .email-display {
+        font-size: clamp(24px, 4vw, 25px); /* Responsive font size */
+        font-weight: 300;
+        color: #8f8273;
+        word-break: break-all; /* Prevents overflow on mobile */
+      }
+
+      .footer-menu a {
+        color: #8f8273;
+        text-decoration: none;
+        margin-left: 20px;
+        font-size: 18px;
+        transition: 0.3s;
+      }
+
+      .footer-menu a:hover {
+        color: white;
+      }
+
+      /* Updated Social Icons - Removed the 180px margin */
+      .social-icons {
+        margin-top: 40px;
+      }
+
+      .social-icons a {
+        color: white;
+        font-size: 20px;
+        margin-left: 10px;
+        border: 1px solid #333;
+        padding: 10px 14px;
+        display: inline-block;
+        transition: 0.3s;
+      }
+
+      .social-icons a:hover {
+        border-color: #8f8273;
+        background: #8f8273;
+      }
+
+      .contact-btn {
+        padding: 12px 35px;
+        border: 1px solid #8f8273;
+        background: transparent;
+        color: white;
+        font-size: 20px;
+        border-radius: 0;
+        transition: 0.3s;
+      }
+
+      .contact-btn:hover {
+        background: white;
+        color: black;
+      }
+
+      .footer-line {
+        border-color: #222;
+        opacity: 1;
+      }
+
+      .footer-text,
+      .footer-link {
+        color: #555; /* Dimmer footer text */
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      /* Mobile Adjustments */
+      @media (max-width: 991px) {
+        .footer-menu {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 15px;
+          margin-bottom: 30px;
+        }
+        .footer-menu a {
+          margin-left: 0;
+          font-size: 16px;
+        }
+        .social-icons {
+          margin-top: 20px;
+        }
+      }
+    </style>
   </body>
 </html>
