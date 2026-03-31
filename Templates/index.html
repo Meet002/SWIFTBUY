@@ -1,0 +1,273 @@
+{% extends "base.html" %} {% block body %}
+<!-- Product Offer Carousel Section -->
+<div class="container my-5">
+  <h2 class="text-center fw-bold mb-4">Top Offers</h2>
+
+  <div
+    id="productCarousel"
+    class="carousel slide"
+    data-bs-ride="carousel"
+    data-bs-interval="3000"
+  >
+    <div class="carousel-inner">
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div
+          class="card mx-auto shadow-lg"
+          style="width: 70%; border-radius: 15px"
+        >
+          <div class="position-relative">
+            <span
+              class="badge bg-danger position-absolute top-0 start-0 m-2 fs-6"
+            >
+              25% OFF
+            </span>
+
+            <img
+              src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab"
+              class="card-img-top"
+              style="height: 300px; object-fit: cover"
+              alt="T-Shirt"
+            />
+          </div>
+
+          <div class="card-body text-center">
+            <h4 class="card-title">Premium T-Shirt</h4>
+            <p class="card-text">
+              Comfortable cotton wear for daily fashion style.
+            </p>
+            <h5>₹799 <del class="text-muted">₹999</del></h5>
+            <button class="btn btn-dark w-10 mt-2">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div
+          class="card mx-auto shadow-lg"
+          style="width: 70%; border-radius: 15px"
+        >
+          <div class="position-relative">
+            <span
+              class="badge bg-danger position-absolute top-0 start-0 m-2 fs-6"
+            >
+              25% OFF
+            </span>
+
+            <img
+              src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246"
+              class="card-img-top"
+              style="height: 300px; object-fit: cover"
+              alt="Hoodie"
+            />
+          </div>
+
+          <div class="card-body text-center">
+            <h4 class="card-title">Stylish Hoodie</h4>
+            <p class="card-text">
+              Warm and trendy hoodie for winter collection.
+            </p>
+            <h5>₹1499 <del class="text-muted">₹1999</del></h5>
+            <button class="btn btn-dark w-10 mt-2">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <div
+          class="card mx-auto shadow-lg"
+          style="width: 70%; border-radius: 15px"
+        >
+          <div class="position-relative">
+            <span
+              class="badge bg-danger position-absolute top-0 start-0 m-2 fs-6"
+            >
+              25% OFF
+            </span>
+
+            <img
+              src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f"
+              class="card-img-top"
+              style="height: 300px; object-fit: cover"
+              alt="Jacket"
+            />
+          </div>
+
+          <div class="card-body text-center">
+            <h4 class="card-title">Casual Jacket</h4>
+            <p class="card-text">Premium stylish jacket for modern look.</p>
+            <h5>₹2199 <del class="text-muted">₹2799</del></h5>
+            <button class="btn btn-dark w-10 mt-2">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Previous Button -->
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#productCarousel"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon bg-dark rounded-circle"></span>
+    </button>
+
+    <!-- Next Button -->
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#productCarousel"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon bg-dark rounded-circle"></span>
+    </button>
+  </div>
+</div>
+
+<!-- Favorite Collection Section -->
+<div class="container my-5 py-5">
+  <h2 class="mb-2" style="font-size: 60px">
+    Our Favourite <br />
+    Collection
+  </h2>
+
+  <p class="text-right text-bold mb-4" style="font-size: 20px">
+    We are inspired by the realities of life today, in which  <br/> traditional divides
+    between personal and professional </br>space are more fluid.
+  </p>
+
+  <div class="favorite-scroll-wrapper">
+    <div class="favorite-scroll">
+      <!-- Product 1 -->
+      <div class="favorite-card">
+        <img
+          src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab"
+          alt="T-Shirt"
+        />
+        <h4>Cotton T-Shirt</h4>
+        <p>
+          <span class="old-price">₹999</span>
+          <span class="new-price">₹799</span>
+        </p>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="favorite-card">
+        <img
+          src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246"
+          alt="Hoodie"
+        />
+        <h4>Winter Hoodie</h4>
+        <p>
+          <span class="old-price">₹1999</span>
+          <span class="new-price">₹1499</span>
+        </p>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="favorite-card">
+        <img
+          src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f"
+          alt="Jacket"
+        />
+        <h4>Casual Jacket</h4>
+        <p>
+          <span class="old-price">₹2799</span>
+          <span class="new-price">₹2199</span>
+        </p>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="favorite-card">
+        <img
+          src="https://images.unsplash.com/photo-1542291026-7eec264c27ff"
+          alt="Shoes"
+        />
+        <h4>Sport Shoes</h4>
+        <p>
+          <span class="old-price">₹2499</span>
+          <span class="new-price">₹1899</span>
+        </p>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="favorite-card">
+        <img
+          src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=400"
+          alt="Premium Hoodie"
+        />
+        <h4>Urban Oversized Hoodie</h4>
+        <p>
+          <span class="old-price">₹2999</span>
+          <span class="new-price">₹1999</span>
+        </p>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="favorite-card">
+        <img
+          src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=400"
+          alt="Leather Purse"
+        />
+        <h4>Classic Leather Purse</h4>
+        <p>
+          <span class="old-price">₹2999</span>
+          <span class="new-price">₹1999</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .favorite-scroll-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+
+  .favorite-scroll {
+    display: flex;
+    gap: 25px;
+    min-width: max-content;
+    padding-bottom: 10px;
+  }
+
+  .favorite-card {
+    min-width: 350px;
+    max-width: 350px;
+    height: 500px; /* fixed card height */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .favorite-card img {
+    width: 100%;
+    height: 350px; /* same image size */
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .favorite-card h4 {
+    margin-top: 20px;
+    font-weight: 600;
+  }
+
+  .old-price {
+    text-decoration: line-through;
+    font-weight: bold;
+    margin-right: 8px;
+  }
+
+  .new-price {
+    font-size: 22px;
+  }
+</style>
+
+{% endblock body %}
