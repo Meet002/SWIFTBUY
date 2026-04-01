@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+
+{% block body %}
+<style>
+    /* --- 1. Global & Header Styling --- */
+    .contact-header {
+        padding-top: 60px;
+        padding-bottom: 20px;
+    }
+
+    .text-muted-custom {
+        color: #6c757d;
+        font-size: 18px;
+        line-height: 1.6;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* --- 2. Contact Section (Info & Form) --- */
+    .contact-section {
+        padding: 80px 20px 80px 20px;
+        background-color: #ffffff;
+    }
+
+    .contact-info h2 {
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+
+    .info-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 25px;
+    }
+
+    .info-icon {
+        color: #c48b4d; 
+        font-size: 20px;
+        margin-right: 15px;
+        margin-top: 5px;
+    }
+
+    .info-content label {
+        display: block;
+        font-weight: 800;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 2px;
+    }
+
+    /* --- 3. Form Styling --- */
+    .form-container {
+        border: 1px solid #eeeeee;
+        padding: 40px;
+        background-color: #fff;
+    }
+
+    .form-control {
+        border-radius: 0;
+        border: 1px solid #dddddd;
+        padding: 12px 15px;
+        margin-bottom: 20px;
+    }
+
+    .form-control:focus {
+        border-color: #000;
+        box-shadow: none;
+    }
+
+    .btn-send {
+        background-color: #1d1c1a;
+        color: white;
+        border: none;
+        border-radius: 0;
+        padding: 15px 40px;
+        font-weight: 600;
+        float: right;
+        transition: 0.3s;
+    }
+
+    .btn-send:hover {
+        background-color: #333;
+    }
+
+    .map-wrapper {
+    line-height: 0; 
+    border: 1px solid #eeeeee; /* Optional: adds a light border like your form */
+    overflow: hidden;
+    filter: grayscale(100%);
+    transition: 0.5s;
+}
+
+.map-wrapper:hover {
+    filter: grayscale(0%);
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    display: block;
+}
+</style>
+
+<div class="container contact-header">
+    <div class="text-center">
+        <h1 class="fw-bold display-5 mb-3">Contact Us</h1>
+        <p class="text-muted-custom">
+            We’d love to hear from you! Get in touch with our team for any questions or feedback regarding your SwiftBuy experience.
+        </p>
+    </div>
+</div>
+
+<div class="container contact-section">
+    <div class="row g-5">
+        <div class="col-lg-5 ">
+            <h2>Get in Touch</h2>
+            <p class="mb-5 text-secondary">Whether you have a question about our products, need assistance, or just want to talk furniture — we're here for you.</p>
+            
+            <div class="info-item">
+                <i class="bi bi-geo-alt-fill info-icon"></i>
+                <div class="info-content">
+                    <label>Address</label>
+                    <span>123 Furniture Street, Mumbai, India</span>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="bi bi-envelope-fill info-icon"></i>
+                <div class="info-content">
+                    <label>Email</label>
+                    <span>support@swiftbuy.com</span>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="bi bi-telephone-fill info-icon"></i>
+                <div class="info-content">
+                    <label>Phone</label>
+                    <span>+91 98765 43210</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-7">
+            <div class="form-container shadow-sm">
+                <h3 class="mb-4">Send a Message</h3>
+                <form action="#" method="POST">
+                    {% csrf_token %} 
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold small">Full Name</label>
+                            <input type="text" name="name" class="form-control" placeholder="Your name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold small">Email</label>
+                            <input type="email" name="email" class="form-control" placeholder="you@example.com" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold small">Subject</label>
+                        <input type="text" name="subject" class="form-control" placeholder="How can we help?">
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label fw-bold small">Message</label>
+                        <textarea name="message" class="form-control" rows="5" placeholder="Write your message here..." required></textarea>
+                    </div>
+                    <div class="clearfix">
+                        <button type="submit" class="btn btn-send">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="map-wrapper shadow-sm">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.12154562507!2d72.7661555759714!3d21.147551083687396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04d80f5d55555%3A0x46427d142d54e4c2!2sSurat%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1711985123456!5m2!1sen!2sin"            width="100%" 
+            height="450" 
+            style="border:0; display:block;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+</div>
+
+{% endblock body %}

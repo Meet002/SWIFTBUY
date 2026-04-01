@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block body %}
+<style>
+</style>
+<!-- Products Us Section -->
+<div class="container my-5">
+    <!-- Center Title -->
+    <div class="text-center mb-5 pb-5">
+        <h2 class="fw pb-2" style="font-size: 42px">What Our Customers Say</h2>
+        <p class="text-muted mx-auto" style="font-size: 20px">
+            We value each voice and every experience. Here's what </br>people say about Furnish.
+        </p>
+    </div>
+    <div>
+        <div class="row row-cols-1 row-cols-md-3 g-3">
+            <!-- Testimonial 1 -->
+            {% for i in "x"|rjust:"9" %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <p class="card-text">"Furnish transformed my living room! The quality and design are unmatched."</p>
+                    </div>
+                    <div class="card-footer d-flex align-items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer 1" class="rounded-circle me-3" width="50" height="50">
+                        <div>
+                            <h5 class="mb-0">John    Doe</h5>
+                            <small class="text-muted">Verified Buyer</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock body %}

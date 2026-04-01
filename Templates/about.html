@@ -1,0 +1,195 @@
+{% extends "base.html" %} {% block body %}
+
+<style>
+  /* --- Global & Typography --- */
+  .about-container {
+    max-width: 1200px;
+  }
+
+  .text-muted-custom {
+    font-size: 18px; /* 22px was a bit too large for body text */
+    line-height: 1.6;
+    color: #555 !important;
+  }
+
+  /* --- Core Values Section --- */
+  .core-values-section {
+    background: #f3f3f3;
+    padding: 80px 0;
+  }
+
+  .core-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #222;
+  }
+
+  .value-card {
+    background: white;
+    padding: 40px 25px;
+    height: 100%; /* Ensures all cards in a row are same height */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .value-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .value-icon {
+    font-size: 48px;
+    color: #222;
+    margin-bottom: 20px;
+  }
+
+  .value-card h3 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .value-card p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+  }
+
+  /* --- Marketing / Team Section --- */
+  .team-img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border: 3px solid #fff;
+  }
+
+  .featurette-divider {
+    margin: 5rem 0;
+  }
+</style>
+
+<!-- About Us Section -->
+<div class="container my-5">
+  <!-- Center Title -->
+  <div class="text-center mb-5 pb-5">
+    <h2 class="fw pb-2" style="font-size: 42px">About Our Store</h2>
+
+    <p class="text-muted mx-auto" style="font-size: 20px">
+      Discover a curated collection where modern trends meet everyday comfort. </br> From premium hoodies to elegant evening wear,
+      we craft high-quality apparel designed to elevate your personal style and fit your fast-paced life.
+    </p>
+  </div>
+
+  <!-- Content Row -->
+  <div class="row align-items-center g-5">
+    <!-- Left Side Image -->
+    <div class="col-lg-6 mb-4">
+      <img
+        src="https://images.unsplash.com/photo-1441986300917-64674bd600d8"
+        class="img-fluid rounded-4 shadow"
+        alt="About SwiftBuy"
+        style="height: 500px; width: 100%; object-fit: cover"
+      />
+    </div>
+
+    <!-- Right Side Description -->
+    <div class="col-lg-6">
+      <h3 class="fw-bold mb-3">Our Mission</h3>
+      <p class="text-muted mb-4">
+        SWIFTBUY was born from the idea that what you wear should be as versatile as the life you lead. We bridge the gap between high-end fashion and everyday wearability.
+        <br></br> Inspired by the fluid boundaries of modern life—where work, home, and social spaces overlap—we craft premium apparel that feels as good as it looks. From the sharp silhouette of a business suit to the relaxed comfort of an oversized hoodie, our collections are designed to move with you.
+      </p>
+      <button class="btn btn-dark mt-3 px-4 py-2">Explore Collection</button>
+    </div>
+  </div>
+</div>
+
+<!-- Core Values Section -->
+<div class="container-fluid core-values-section py-5">
+    <div class="container">
+
+        <!-- Heading -->
+        <h2 class="text-center mb-5">
+            Our Core Values
+        </h2>
+
+        <!-- Cards Row -->
+        <div class="row g-4">
+
+            <!-- Card 1 -->
+            <div class="col-md-4">
+                <div class="value-card text-center">
+                    <i class="bi bi-tree value-icon"></i>
+                    <h3 class="mt-1">Sustainability</h3>
+                    <p>
+                        We use responsibly sourced fabrics to ensure our clothing
+                        supports a greener and more sustainable future.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-4">
+                <div class="value-card text-center">
+                    <i class="bi bi-award value-icon"></i>
+                    <h3 class="mt-1">Quality</h3>
+                    <p>
+                        Every piece undergoes careful quality checks to guarantee
+                        durability, comfort, and premium craftsmanship.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-4">
+                <div class="value-card text-center">
+                    <i class="bi bi-pencil value-icon"></i>
+                    <h3 class="mt-1">Design</h3>
+                    <p>
+                        Our fashion blends modern trends with timeless elegance,
+                        creating styles for every occasion.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Team Section -->
+
+<div class="container marketing py-5">
+  <div class="row text-center">
+
+    <!-- Heading -->
+        <h2 class="text-center mb-5">
+            Meet Our Team
+        </h2>
+    <div class="col-lg-4">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=140&h=140&fit=crop" 
+           class="rounded-circle mb-3 border shadow-sm" alt="John Doe">
+      <h2 class="fw-normal">Alex Johnson</h2>
+      <p>AI doesn't have its own intelligence; it gains it through three key elements: analysis, synthesis, and logical reasoning to provide the best product matches for you.</p>
+    </div>
+
+    <div class="col-lg-4">
+      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=140&h=140&fit=crop" 
+           class="rounded-circle mb-3 border shadow-sm" alt="Jane Smith">
+      <h2 class="fw-normal">Sarah Miller</h2>
+      <p>Processing natural language is a major challenge. AI enables us to achieve four types of processing: acoustic, morphological, syntactic, and semantic for seamless global shopping.</p>
+    </div>
+
+    <div class="col-lg-4">
+      <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=140&h=140&fit=crop" 
+           class="rounded-circle mb-3 border shadow-sm" alt="Mike Ross">
+      <h2 class="fw-normal">David Chen</h2>
+      <p>Thanks to AI research, we have moved from physical interaction to logical interaction. This transition positively impacts how modern brands connect with global audiences.</p>
+    </div>
+  </div>
+</div>
+  
+{% endblock body %}
