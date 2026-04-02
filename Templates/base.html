@@ -91,138 +91,7 @@
         padding-left: 35px;
         padding-right: 35px;
       }
-    </style>
-  </head>
 
-  <body>
-    <nav class="top-navbar d-flex justify-content-between align-items-center">
-      <!-- Logo -->
-      <div class="brand-logo">
-        SWIFT
-        <span>BUY</span>
-      </div>
-
-      <!-- Center Menu -->
-      <div class="nav-links d-none d-lg-flex">
-        <a href="/">HOME</a>
-        <a href="/about/">ABOUT US</a>
-        <a href="/products/">PRODUCTS</a>
-        <a href="/testimonials/">TESTIMONIALS</a>
-        <a href="/contact/">CONTACT</a>
-      </div>
-
-      <!-- Right Side -->
-      <div class="d-flex align-items-center">
-        <div class="right-side">
-          <i class="bi bi-telephone"></i> +91 9876543210
-        </div>
-        <div
-          class="menu-icon"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#sideMenu"
-        >
-          <i class="bi bi-list"></i>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Side Menu -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="sideMenu">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title fw-bold ">
-          SWIFT <br />
-          BUY
-        </h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="offcanvas"
-        ></button>
-      </div>
-
-      <div class="offcanvas-body">
-        <ul class="list-unstyled fs-5">
-          <li class="mb-3"><a href="#" class="menu-link">Home</a></li>
-          <li class="mb-3"><a href="#" class="menu-link">About Us</a></li>
-          <li class="mb-3"><a href="#" class="menu-link">Products</a></li>
-          <li class="mb-3"><a href="#" class="menu-link">Testimonials</a></li>
-          <li class="mb-3"><a href="#" class="menu-link">Contact</a></li>
-          <li class="mb-3"><a href="#" class="menu-link">Login</a></li>
-        </ul>
-      </div>
-    </div>
-
-    {% block body %} {% endblock body %}
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-    />
-
-    <!-- modern dark footer  -->
-    <footer class="dark-contact-section">
-      <div class="container py-5">
-        <div class="row align-items-start gy-5">
-          <div class="col-lg-7">
-            <div class="brand-block mb-5">
-              <h6 class="small-logo">
-                SWIFT <br />
-                BUY
-              </h6>
-            </div>
-
-            <h1 class="main-heading">
-              We Design all over <br class="d-none d-md-block" />
-              the world
-            </h1>
-
-            <div class="email-box mt-5">
-              <p class="mb-1 small-text">Email Id</p>
-              <h3 class="email-display">Info@example.com</h3>
-            </div>
-          </div>
-
-          <div class="col-lg-5 text-lg-end">
-            <nav class="footer-menu mb-5">
-              <a href="#">Home</a>
-              <a href="#">Services</a>
-              <a href="#">Products</a>
-              <a href="#">About Us</a>
-              <a href="#">Contact</a>
-            </nav>
-
-            <div class="footer-actions d-flex flex-column align-items-lg-end">
-              <div class="social-icons mb-4">
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-
-              <button class="btn contact-btn">Contact us</button>
-            </div>
-          </div>
-        </div>
-
-        <hr class="footer-line mt-5 mb-4" />
-
-        <div class="row pb-3">
-          <div class="col-md-6 mb-3 mb-md-0">
-            <p class="footer-text mb-0">
-              © 2026 SwiftBuy. Developed by Meet Vadoliya
-            </p>
-          </div>
-
-          <div class="col-md-6 text-md-end">
-            <a href="#" class="footer-link">Privacy Policy</a>
-            <a href="#" class="footer-link ms-4">Terms & Conditions</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <style>
       .dark-contact-section {
         background: #211f1c;
         color: #d1c5b5;
@@ -335,5 +204,145 @@
         }
       }
     </style>
+  </head>
+
+  <body>
+    <nav class="top-navbar d-flex justify-content-between align-items-center">
+      <!-- Logo -->
+      <div class="brand-logo">
+        SWIFT
+        <span>BUY</span>
+      </div>
+
+      <!-- Center Menu -->
+      <div class="nav-links d-none d-lg-flex">
+        <a href="/">HOME</a>
+        <a href="/about/">ABOUT US</a>
+        <a href="/products/">PRODUCTS</a>
+        <a href="/testimonials/">TESTIMONIALS</a>
+        <a href="/contact/">CONTACT</a>
+      </div>
+
+      <!-- Right Side -->
+      <div class="d-flex align-items-center">
+        <div class="right-side">
+          <i class="bi bi-telephone"></i> +91 9876543210
+        </div>
+        <div
+          class="menu-icon"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#sideMenu"
+        >
+          <i class="bi bi-list"></i>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-3">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+    <!-- Side Menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="sideMenu">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title fw-bold ">
+          SWIFT <br />
+          BUY
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+        ></button>
+      </div>
+
+      <div class="offcanvas-body">
+        <ul class="list-unstyled fs-5">
+          <li class="mb-3"><a href="/" class="menu-link">Home</a></li>
+          <li class="mb-3"><a href="/about/" class="menu-link">About Us</a></li>
+          <li class="mb-3"><a href="/products/" class="menu-link">Products</a></li>
+          <li class="mb-3"><a href="/testimonials/" class="menu-link">Testimonials</a></li>
+          <li class="mb-3"><a href="/contact/" class="menu-link">Contact</a></li>
+          <li class="mb-3"><a href="/login/" class="menu-link">Login</a></li>
+        </ul>
+      </div>
+    </div>
+
+    {% block body %} {% endblock body %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
+    <!-- modern dark footer  -->
+    <footer class="dark-contact-section">
+      <div class="container py-5">
+        <div class="row align-items-start gy-5">
+          <div class="col-lg-7">
+            <div class="brand-block mb-5">
+              <h6 class="small-logo">
+                SWIFT <br />
+                BUY
+              </h6>
+            </div>
+
+            <h1 class="main-heading">
+              We Design all over <br class="d-none d-md-block" />
+              the world
+            </h1>
+
+            <div class="email-box mt-5">
+              <p class="mb-1 small-text">Email Id</p>
+              <h3 class="email-display">Info@example.com</h3>
+            </div>
+          </div>
+
+          <div class="col-lg-5 text-lg-end">
+            <nav class="footer-menu mb-5">
+              <a href="#">Home</a>
+              <a href="#">Services</a>
+              <a href="#">Products</a>
+              <a href="#">About Us</a>
+              <a href="#">Contact</a>
+            </nav>
+
+            <div class="footer-actions d-flex flex-column align-items-lg-end">
+              <div class="social-icons mb-4">
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+
+              <button class="btn contact-btn">Contact us</button>
+            </div>
+          </div>
+        </div>
+
+        <hr class="footer-line mt-5 mb-4" />
+
+        <div class="row pb-3">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <p class="footer-text mb-0">
+              © 2026 SwiftBuy. Developed by Meet Vadoliya
+            </p>
+          </div>
+
+          <div class="col-md-6 text-md-end">
+            <a href="#" class="footer-link">Privacy Policy</a>
+            <a href="#" class="footer-link ms-4">Terms & Conditions</a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

@@ -1,0 +1,159 @@
+{% extends "base.html" %} {% load static %} {% block body %}
+
+<div class="container py-5">
+  <div class="row g-5">
+
+    <!-- LEFT SIDE IMAGE SECTION -->
+    <div class="col-lg-6">
+
+      <!-- Main Image -->
+      <div class="card border-0 shadow-sm rounded-4">
+        <img
+          id="mainProductImage"
+          src="{{ product.image.url }}"
+          class="img-fluid rounded-4"
+          style="height: 500px; object-fit: contain"
+          alt="{{ product.name }}"
+        />
+      </div>
+
+      <!-- Small Gallery -->
+      <div class="d-flex gap-3 mt-4">
+        {% if product.image %}
+        <img
+          src="{{ product.image.url }}"
+          class="img-thumbnail rounded-3 gallery-img"
+          width="100"
+          height="100"
+          style="object-fit: cover; cursor: pointer"
+          onclick="changeImage(this.src)"
+        />
+        {% endif %} {% if product.image_2 %}
+        <img
+          src="{{ product.image_2.url }}"
+          class="img-thumbnail rounded-3 gallery-img"
+          width="100"
+          height="100"
+          style="object-fit: cover; cursor: pointer"
+          onclick="changeImage(this.src)"
+        />
+        {% endif %} {% if product.image_3 %}
+        <img
+          src="{{ product.image_3.url }}"
+          class="img-thumbnail rounded-3 gallery-img"
+          width="100"
+          height="100"
+          style="object-fit: cover; cursor: pointer"
+          onclick="changeImage(this.src)"
+        />
+        {% endif %}
+      </div>
+    </div>
+
+    <script>
+      function changeImage(imageSrc) {
+        document.getElementById("mainProductImage").src = imageSrc;
+      }
+    </script>
+
+    <!-- RIGHT SIDE PRODUCT DETAILS -->
+    <div class="col-lg-6">
+      <p class="text-muted mb-1">
+        {{ product.category|upper }} / {{ product.cloth_type|upper }}
+      </p>
+
+      <h2 class="fw-bold">{{ product.name }}</h2>
+
+      <h5 class="text-muted mb-3">Brand: {{ product.brand }}</h5>
+
+      <div class="mb-3">
+        <span class="fs-3 fw-bold text-dark">
+          ₹{{ product.discount_price }}
+        </span>
+
+        <span class="text-muted text-decoration-line-through ms-2">
+          ₹{{ product.price }}
+        </span>
+      </div>
+
+      <div class="mb-3">
+        ⭐⭐⭐⭐⭐
+        <span class="text-muted ms-2"> {{ product.reviews }} reviews </span>
+      </div>
+
+      <hr />
+
+      <p class="text-muted">{{ product.description }}</p>
+
+      <hr />
+
+      <!-- Size -->
+      <div class="mb-4">
+        <label class="fw-bold mb-2">Select Size</label>
+        <select class="form-select w-50">
+          <option>{{ product.size }}</option>
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+        </select>
+      </div>
+
+      <!-- Color -->
+      <div class="mb-3"><strong>Color:</strong> {{ product.color }}</div>
+
+      <!-- Fabric -->
+      <div class="mb-3"><strong>Fabric:</strong> {{ product.fabric }}</div>
+
+      <!-- Fit -->
+      <div class="mb-4"><strong>Fit Type:</strong> {{ product.fit_type }}</div>
+
+      <!-- Stock -->
+      <div class="mb-4"><strong>Stock:</strong> {{ product.stock }}</div>
+
+      <!-- Buttons -->
+      <div class="d-flex gap-3">
+        <button class="btn btn-dark px-5 py-2 rounded-pill">Add to Cart</button>
+
+        <button class="btn btn-outline-dark px-4 py-2 rounded-pill">
+          Wishlist
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Info Tabs -->
+  <div class="mt-5">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <button
+          class="nav-link active"
+          data-bs-toggle="tab"
+          data-bs-target="#details"
+        >
+          Details
+        </button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#care">
+          Care Instructions
+        </button>
+      </li>
+    </ul>
+
+    <div class="tab-content border p-4">
+      <div class="tab-pane fade show active" id="details">
+        <p><strong>Fabric:</strong> {{ product.fabric }}</p>
+        <p><strong>Fit:</strong> {{ product.fit_type }}</p>
+        <p><strong>Color:</strong> {{ product.color }}</p>
+        <p><strong>Type:</strong> {{ product.cloth_type }}</p>
+      </div>
+
+      <div class="tab-pane fade" id="care">
+        <p>Machine wash cold. Do not bleach. Iron on low heat.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
